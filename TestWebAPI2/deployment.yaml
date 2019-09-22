@@ -1,0 +1,17 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetlinux
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dotnetlinux
+    spec:
+      containers:
+        - image: "testwebapi2"
+          imagePullPolicy: Always
+          name: dotnetlinux
+          ports:
+            - containerPort: 80
